@@ -1,0 +1,8 @@
+<h1>Вопрос:</h1>
+<p><%= @question.body %></p>
+
+<%= form_tag(test_question_path(@test, @question), method: :delete) do %>
+  <%= submit_tag('Удалить вопрос') %>
+<% end %>
+
+<%= link_to 'Назад к списку вопросов', test_questions_path(@test) %>
