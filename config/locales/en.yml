@@ -18,11 +18,17 @@ en:
         level: "Level"
         category_id: "Category"
         author_id: "Author"
+        timer: "Travel time (minutes)"
       question:
         body: "Question Content"
       answer:
         body: "Answer"
         correct: "Correct"
+
+  timer:
+    time_left: "Time left: %{minutes}:%{seconds}"
+    time_out: "Time is up!"   
+    column: "Timer (minutes)"   
         
   shared:
     errors:
@@ -61,6 +67,8 @@ en:
       author: "Author"
       questions_count: "Number of Questions"
       actions: "Actions"  
+      timer: "Timer (minutes)"
+      unlimited: "Unlimited"
 
   admin:
     tests:
@@ -83,6 +91,7 @@ en:
         questions_count: "Number of Questions"
         actions: "Actions"
         new_test: "New Test"
+        timer: "Timer (minutes)"
       show:
         header: "Test %{title}"
         level: "Level: %{level}"

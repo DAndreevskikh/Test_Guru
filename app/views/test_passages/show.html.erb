@@ -2,14 +2,20 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-8">
       <h1 class="text-center mb-4"><%= t('test_passages.take_test.header', title: @test_passage.test.title) %></h1>
-      
+
+      <% if @test_passage.test.timer.present? %>
+        <div id="timer" data-time-left="<%= @test_passage.time_left %>" 
+             data-time-left-text="<%= t_js('timer.time_left', minutes: '%{minutes}', seconds: '%{seconds}') %>"
+             data-time-out-text="<%= t_js('timer.time_out') %>"></div>
+      <% end %>
+
       <div class="progress mb-3">
         <div class="progress-bar" role="progressbar" style="width: 0%;" 
              data-current-question="<%= @test_passage.current_question_number %>" 
              data-questions-count="<%= @test_passage.total_questions_count %>" aria-valuemin="0" aria-valuemax="100">
         </div>
       </div>
-      
+
       <div class="mb-3">
         <strong class="d-block text-center mb-2"><%= t('test_passages.take_test.question', current: @test_passage.current_question_number, total: @test_passage.total_questions_count) %></strong>
         <p class="text-center"><%= @test_passage.current_question.body %></p>

@@ -18,11 +18,17 @@ ru:
         level: "Уровень"
         category_id: "Категория"
         author_id: "Автор"
+        timer: "Время прохождения (в минутах)"
       question:
         body: "Содержимое вопроса"
       answer:
         body: "Вопрос"
         correct: "Верный"
+
+  timer:
+    time_left: "Оставшееся время: %{minutes}:%{seconds}"
+    time_out: "Время вышло!" 
+    column: "Таймер (минуты)"     
         
   shared:
     errors:
@@ -63,6 +69,8 @@ ru:
       author: "Автор"
       questions_count: "Вопросов в тесте"
       actions: "Действия"    
+      timer: "Таймер (минуты)"
+      unlimited: "Неограниченно"
 
   admin:
     tests:
@@ -85,6 +93,7 @@ ru:
         questions_count: "Вопросов в тесте"
         actions: "Действия"
         new_test: "Новый Тест"
+        timer: "Таймер (минуты)"
       show:
         header: "Тест %{title}"
         level: "Уровень: %{level}"

@@ -33,6 +33,16 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
+  def time_left
+    return if test.timer.zero?
+
+    (created_at + test.timer.minutes - Time.current).to_i
+  end
+
+  def timed_out?
+    time_left <= 0
+  end
+
   private
 
   def before_validation_set_first_question

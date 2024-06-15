@@ -13,7 +13,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.completed?
+    if @test_passage.timed_out? || @test_passage.completed?
       if @test_passage.success?
         @awarded_badge = BadgeIssuanceService.new(@test_passage).call
         TestsMailer.completed_test(@test_passage).deliver_now
